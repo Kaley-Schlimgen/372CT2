@@ -14,10 +14,12 @@ import java.awt.*;
 
 public class Window_2 extends JFrame {
     private JTextField balanceField;
+    private JTextField withdrawField;
+    private JTextField depositField;
 
     public Window_2() {
         setTitle("ACCOUNT BALANCE");
-        setSize(300, 200);
+        //setSize(300, 200);
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);JPanel mainPanel = new JPanel(new BorderLayout());
         
         mainPanel.add(displayBalancePanel(), BorderLayout.NORTH);
@@ -25,7 +27,7 @@ public class Window_2 extends JFrame {
         mainPanel.add(optionsPanel(), BorderLayout.SOUTH);
         
         add(mainPanel);
-        //pack();
+        pack();
         setVisible(true);
     }
     
@@ -51,18 +53,34 @@ public class Window_2 extends JFrame {
     
     private JPanel optionsPanel() {
         JPanel panel = new JPanel();
-        panel.add(new JLabel("Panel 3"));
+        //panel.add(new JLabel("Panel 3"));
         
         panel = new JPanel();
         panel.setLayout(new GridLayout(1, 3, 10, 5));
         panel.setBorder(BorderFactory.createTitledBorder(""));
         
+        withdrawField = new JTextField(5);
+        withdrawField.setEditable(true);
+        withdrawField.setText("0");
+        //panel.add(withdrawField);
+        
+        depositField = new JTextField(5);
+        depositField.setEditable(true);
+        depositField.setText("0");
+        
         JButton button = new JButton("Deposit");
         JButton button2 = new JButton("Withdraw");
         JButton button3 = new JButton("Exit");
         
+        panel.add(new JLabel("Deposit Amount:"));
+        panel.add(depositField);
         panel.add(button);
+        
+        panel.add(new JLabel("Withdraw Amount:"));
+        panel.add(withdrawField);
         panel.add(button2);
+        
+        panel.add(new JLabel("Log Out & Exit"));
         panel.add(button3);
         
         return panel;
