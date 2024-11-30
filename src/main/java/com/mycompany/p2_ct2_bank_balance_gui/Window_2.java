@@ -56,7 +56,7 @@ public class Window_2 extends JFrame {
         //panel.add(new JLabel("Panel 3"));
         
         panel = new JPanel();
-        panel.setLayout(new GridLayout(1, 3, 10, 5));
+        panel.setLayout(new GridLayout(3, 3, 10, 5));
         panel.setBorder(BorderFactory.createTitledBorder(""));
         
         withdrawField = new JTextField(5);
@@ -72,16 +72,24 @@ public class Window_2 extends JFrame {
         JButton button2 = new JButton("Withdraw");
         JButton button3 = new JButton("Exit");
         
-        panel.add(new JLabel("Deposit Amount:"));
-        panel.add(depositField);
-        panel.add(button);
+        JPanel innerPanel1 = new JPanel();
+        innerPanel1.add(new JLabel("Deposit Amount:"));
+        innerPanel1.add(depositField);
+        innerPanel1.add(button);
         
-        panel.add(new JLabel("Withdraw Amount:"));
-        panel.add(withdrawField);
-        panel.add(button2);
+        JPanel innerPanel2 = new JPanel();
+        innerPanel2.add(new JLabel("Withdraw Amount:"));
+        innerPanel2.add(withdrawField);
+        innerPanel2.add(button2);
         
-        panel.add(new JLabel("Log Out & Exit"));
-        panel.add(button3);
+        JPanel innerPanel3 = new JPanel();
+        //innerPanel3.add(new JLabel("Log Out & Exit"));
+        innerPanel3.add(button3);
+        
+        
+        panel.add(innerPanel1, BorderLayout.NORTH);
+        panel.add(innerPanel2, BorderLayout.CENTER);
+        panel.add(innerPanel3, BorderLayout.SOUTH);
         
         return panel;
     }
@@ -93,4 +101,3 @@ public class Window_2 extends JFrame {
     }
 }
     
-

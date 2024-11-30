@@ -8,6 +8,7 @@ package com.mycompany.p2_ct2_bank_balance_gui;
  *
  * @author kaleyschlimgen
  */
+
 import javax.swing.*;
 import java.awt.event.*;
 
