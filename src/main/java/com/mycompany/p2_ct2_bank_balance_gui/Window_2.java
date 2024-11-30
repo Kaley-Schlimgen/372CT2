@@ -13,9 +13,16 @@ import java.awt.event.*;
 import java.awt.*;
 
 public class Window_2 extends JFrame {
+    private JLabel enterBalanceLabel;
+    private JLabel displayBalanceLabel;
     private JTextField balanceField;
     private JTextField withdrawField;
     private JTextField depositField;
+    //private JTextField enterBalanceField;
+    private JTextField inputField;
+    private JTextField outputField;
+    //private JTextField displayBalanceField;
+    private JButton enterButton;
 
     public Window_2() {
         setTitle("ACCOUNT BALANCE");
@@ -32,6 +39,88 @@ public class Window_2 extends JFrame {
     }
     
     private JPanel displayBalancePanel(){
+        JPanel panel = new JPanel();
+        
+        panel = new JPanel();
+        panel.setLayout(new GridLayout(3, 3, 10, 5));
+        panel.setBorder(BorderFactory.createTitledBorder(""));
+        
+        inputField = new JTextField(5);
+        inputField.setEditable(true);
+        inputField.setText("0");
+        
+        outputField = new JTextField(5);
+        outputField.setEditable(true);
+        outputField.setText("0");
+        
+        JButton enterButton = new JButton("Enter");
+        
+        JPanel inputPanel = new JPanel();
+        inputPanel.add(new JLabel("Enter Account Balance:"));
+        inputPanel.add(inputField);
+        
+        JPanel outputPanel = new JPanel();
+        outputPanel.add(new JLabel("Account Balance:"));
+        outputPanel.add(outputField);
+        
+        JPanel buttonPanel = new JPanel();
+        buttonPanel.add(enterButton);
+        
+        panel.add(inputPanel, BorderLayout.NORTH);
+        panel.add(outputPanel, BorderLayout.CENTER);
+        panel.add(buttonPanel, BorderLayout.SOUTH);
+        
+        return panel;
+    }
+        /*
+    JPanel enterPanel = new JPanel();
+            enterPanel.setLayout(new GridLayout(3, 3, 10, 5));
+        
+            //set enterBalance label
+            enterBalanceLabel = new JLabel("Enter your account balance:");
+            enterPanel.add(enterBalanceLabel);
+        
+            //set enterBalance field 
+            enterBalanceField = new JTextField(5);
+            enterBalanceField.setEditable(true);
+            enterBalanceField.setText("0");
+            enterPanel.add(enterBalanceField);
+        
+            //create button
+            JPanel buttonPanel = new JPanel();
+            enterButton = new JButton("Enter");
+            buttonPanel.add(enterButton);
+
+            //enterButton.addActionListener(this);
+        
+
+
+            //Panel for displaying information
+            JPanel displayPanel = new JPanel();
+            displayPanel.setLayout(new GridLayout(1, 2, 2, 2));
+            displayPanel.setBorder(BorderFactory.createMatteBorder
+                (2, 2, 2, 2, Color.BLACK));
+            displayPanel.setPreferredSize(new Dimension(300, 50));
+        
+            //set displayBalance labels
+            displayBalanceLabel = new JLabel ("Your balance:");
+            displayPanel.add(displayBalanceLabel);
+        
+            //set displayBalance field 
+            displayBalanceField = new JTextField(5);
+            displayBalanceField.setEditable(false);
+            displayPanel.add(displayBalanceField);
+            
+            
+            panel.add(enterPanel, BorderLayout.NORTH);
+            panel.add(buttonPanel, BorderLayout.CENTER);
+            panel.add(displayPanel, BorderLayout.SOUTH);
+            
+            return panel;
+        */
+    //}
+    /*
+    private JPanel displayBalancePanel(){
         
         JPanel panel = new JPanel();
         panel.add(new JLabel("Your Balance:"));
@@ -42,7 +131,7 @@ public class Window_2 extends JFrame {
         panel.add(balanceField);
         return panel;
     }
-    
+    */
     private JPanel nextStepPanel() {
         JPanel panel = new JPanel();
         panel.add(new JLabel("What would you like to do?"));
@@ -99,5 +188,5 @@ public class Window_2 extends JFrame {
 
         
     }
+
 }
-    
