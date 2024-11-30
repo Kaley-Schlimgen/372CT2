@@ -12,7 +12,7 @@ import javax.swing.*;
 import java.awt.event.*;
 import java.awt.*;
 
-public class Window_2 extends JFrame {
+public class Window_2 extends JFrame  {
     private JLabel enterBalanceLabel;
     private JLabel displayBalanceLabel;
     private JTextField balanceField;
@@ -65,12 +65,46 @@ public class Window_2 extends JFrame {
         
         JPanel buttonPanel = new JPanel();
         buttonPanel.add(enterButton);
+        enterButton.addActionListener(e -> {
+            changeButtonText();
+        });
+         /*  //@Override
+        private void changeButtonText() {
+            String userInput;
+            int displayedBalance;
+        
+            //get user's balance input
+            userInput = inputField.getText();
+        
+            //convert from string to integer
+            displayedBalance = Integer.parseInt(userInput);
+        
+            //display balance
+            outputField.setText(Integer.toString(displayedBalance));
+    }     */
+        
         
         panel.add(inputPanel, BorderLayout.NORTH);
-        panel.add(outputPanel, BorderLayout.CENTER);
-        panel.add(buttonPanel, BorderLayout.SOUTH);
+        panel.add(buttonPanel, BorderLayout.CENTER);
+        panel.add(outputPanel, BorderLayout.SOUTH);
+        
         
         return panel;
+           
+    }
+            //@Override
+        private void changeButtonText() {
+            String userInput;
+            int displayedBalance;
+        
+            //get user's balance input
+            userInput = inputField.getText();
+        
+            //convert from string to integer
+            displayedBalance = Integer.parseInt(userInput);
+        
+            //display balance
+            outputField.setText(Integer.toString(displayedBalance));
     }
         /*
     JPanel enterPanel = new JPanel();
@@ -175,6 +209,7 @@ public class Window_2 extends JFrame {
         //innerPanel3.add(new JLabel("Log Out & Exit"));
         innerPanel3.add(button3);
         
+
         
         panel.add(innerPanel1, BorderLayout.NORTH);
         panel.add(innerPanel2, BorderLayout.CENTER);
@@ -188,5 +223,11 @@ public class Window_2 extends JFrame {
 
         
     }
+/*
+    @Override
+    public void actionPerformed(ActionEvent e) {
+        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+    }
+*/
 
 }
