@@ -18,19 +18,18 @@ public class Window_2 extends JFrame  {
     private JTextField balanceField;
     private JTextField withdrawField;
     private JTextField depositField;
-    //private JTextField enterBalanceField;
     private JTextField inputField;
     private JTextField outputField;
-    //private JTextField displayBalanceField;
     private JButton enterButton;
 
     public Window_2() {
         setTitle("ACCOUNT BALANCE");
         //setSize(300, 200);
-        setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);JPanel mainPanel = new JPanel(new BorderLayout());
+        setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        JPanel mainPanel = new JPanel(new BorderLayout());
         
         mainPanel.add(displayBalancePanel(), BorderLayout.NORTH);
-        mainPanel.add(nextStepPanel(), BorderLayout.CENTER);
+        //mainPanel.add(nextStepPanel(), BorderLayout.CENTER);
         mainPanel.add(optionsPanel(), BorderLayout.SOUTH);
         
         add(mainPanel);
@@ -59,128 +58,55 @@ public class Window_2 extends JFrame  {
         inputPanel.add(new JLabel("Enter Account Balance:"));
         inputPanel.add(inputField);
         
-        JPanel outputPanel = new JPanel();
-        outputPanel.add(new JLabel("Account Balance:"));
-        outputPanel.add(outputField);
         
-        JPanel buttonPanel = new JPanel();
-        buttonPanel.add(enterButton);
+        
+        //JPanel buttonPanel = new JPanel();
+        inputPanel.add(enterButton);
         enterButton.addActionListener(e -> {
             changeButtonText();
         });
-         /*  //@Override
-        private void changeButtonText() {
-            String userInput;
-            int displayedBalance;
+
+        JPanel outputPanel = new JPanel();
+        outputPanel.setLayout(new GridLayout(1, 1, 10, 5));
+        outputPanel.setBorder(BorderFactory.createMatteBorder
+            (2, 2, 2, 2, Color.BLACK));
+        outputPanel.add(new JLabel("Account Balance:"));
+        outputPanel.add(outputField);
         
-            //get user's balance input
-            userInput = inputField.getText();
-        
-            //convert from string to integer
-            displayedBalance = Integer.parseInt(userInput);
-        
-            //display balance
-            outputField.setText(Integer.toString(displayedBalance));
-    }     */
-        
+        JPanel nextStepPanel = new JPanel();
+        nextStepPanel.add(new JLabel("What would you like to do?"));
         
         panel.add(inputPanel, BorderLayout.NORTH);
-        panel.add(buttonPanel, BorderLayout.CENTER);
-        panel.add(outputPanel, BorderLayout.SOUTH);
+        panel.add(outputPanel, BorderLayout.CENTER);
+        panel.add(nextStepPanel, BorderLayout.SOUTH);
         
         
         return panel;
            
     }
-            //@Override
-        private void changeButtonText() {
-            String userInput;
-            int displayedBalance;
-        
-            //get user's balance input
-            userInput = inputField.getText();
-        
-            //convert from string to integer
-            displayedBalance = Integer.parseInt(userInput);
-        
-            //display balance
-            outputField.setText(Integer.toString(displayedBalance));
-    }
-        /*
-    JPanel enterPanel = new JPanel();
-            enterPanel.setLayout(new GridLayout(3, 3, 10, 5));
-        
-            //set enterBalance label
-            enterBalanceLabel = new JLabel("Enter your account balance:");
-            enterPanel.add(enterBalanceLabel);
-        
-            //set enterBalance field 
-            enterBalanceField = new JTextField(5);
-            enterBalanceField.setEditable(true);
-            enterBalanceField.setText("0");
-            enterPanel.add(enterBalanceField);
-        
-            //create button
-            JPanel buttonPanel = new JPanel();
-            enterButton = new JButton("Enter");
-            buttonPanel.add(enterButton);
 
-            //enterButton.addActionListener(this);
+    private void changeButtonText() {
+        String userInput;
+        int displayedBalance;
         
-
-
-            //Panel for displaying information
-            JPanel displayPanel = new JPanel();
-            displayPanel.setLayout(new GridLayout(1, 2, 2, 2));
-            displayPanel.setBorder(BorderFactory.createMatteBorder
-                (2, 2, 2, 2, Color.BLACK));
-            displayPanel.setPreferredSize(new Dimension(300, 50));
+        //get user's balance input
+        userInput = inputField.getText();
         
-            //set displayBalance labels
-            displayBalanceLabel = new JLabel ("Your balance:");
-            displayPanel.add(displayBalanceLabel);
+        //convert from string to integer
+        displayedBalance = Integer.parseInt(userInput);
         
-            //set displayBalance field 
-            displayBalanceField = new JTextField(5);
-            displayBalanceField.setEditable(false);
-            displayPanel.add(displayBalanceField);
-            
-            
-            panel.add(enterPanel, BorderLayout.NORTH);
-            panel.add(buttonPanel, BorderLayout.CENTER);
-            panel.add(displayPanel, BorderLayout.SOUTH);
-            
-            return panel;
-        */
-    //}
-    /*
-    private JPanel displayBalancePanel(){
-        
-        JPanel panel = new JPanel();
-        panel.add(new JLabel("Your Balance:"));
-        
-        balanceField = new JTextField(5);
-        balanceField.setEditable(false);
-        balanceField.setText("0");
-        panel.add(balanceField);
-        return panel;
+        //display balance
+        outputField.setText(Integer.toString(displayedBalance));
     }
-    */
-    private JPanel nextStepPanel() {
-        JPanel panel = new JPanel();
-        panel.add(new JLabel("What would you like to do?"));
-        
-        
-        return panel;
-    }
-    
+
     private JPanel optionsPanel() {
         JPanel panel = new JPanel();
         //panel.add(new JLabel("Panel 3"));
         
         panel = new JPanel();
         panel.setLayout(new GridLayout(3, 3, 10, 5));
-        panel.setBorder(BorderFactory.createTitledBorder(""));
+        panel.setBorder(BorderFactory.createMatteBorder
+            (2, 2, 2, 2, Color.BLACK));
         
         withdrawField = new JTextField(5);
         withdrawField.setEditable(true);
@@ -223,11 +149,6 @@ public class Window_2 extends JFrame  {
 
         
     }
-/*
-    @Override
-    public void actionPerformed(ActionEvent e) {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
-    }
-*/
+
 
 }
