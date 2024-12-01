@@ -40,7 +40,7 @@ class InputClass extends JFrame  {
         inputField.setText("0");
         
         JPanel inputPanel = new JPanel();
-        inputPanel.add(new JLabel("Enter Account Balance:"));
+        inputPanel.add(new JLabel("Enter Account Balance: $"));
         inputPanel.add(inputField);
        
         JButton enterButton = new JButton("Enter");

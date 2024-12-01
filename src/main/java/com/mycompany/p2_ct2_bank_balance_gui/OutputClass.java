@@ -42,10 +42,10 @@ public class OutputClass extends JDialog {
     private JPanel outputPanel() {
             
         JPanel panel = new JPanel();
-        panel.setLayout(new GridLayout(1, 1, 10, 5));
+        panel.setLayout(new GridLayout(1, 3, 10, 10));
         panel.setBorder(BorderFactory.createMatteBorder
             (2, 2, 2, 2, Color.BLACK));
-        panel.add(new JLabel("Account Balance:"));
+        panel.add(new JLabel("Account Balance: $"));
         panel.add(balanceLabel);
         
         return panel;       
@@ -66,7 +66,7 @@ public class OutputClass extends JDialog {
         JPanel panel = new JPanel();
         
         panel = new JPanel();
-        panel.setLayout(new GridLayout(3, 3, 10, 5));
+        panel.setLayout(new GridLayout(3, 2, 10, 5));
         
         num1Field = new JTextField(5);
         num1Field.setEditable(true);
@@ -112,12 +112,12 @@ public class OutputClass extends JDialog {
         });
         
         JPanel innerPanel1 = new JPanel();
-        innerPanel1.add(new JLabel("Deposit Amount:"));
+        innerPanel1.add(new JLabel("Deposit Amount: $"));
         innerPanel1.add(num1Field);
         innerPanel1.add(button1);
         
         JPanel innerPanel2 = new JPanel();
-        innerPanel2.add(new JLabel("Withdraw Amount:"));
+        innerPanel2.add(new JLabel("Withdraw Amount: $"));
         innerPanel2.add(num2Field);
         innerPanel2.add(button2);
         
