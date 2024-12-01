@@ -11,7 +11,6 @@ package com.mycompany.p2_ct2_bank_balance_gui;
 import java.awt.BorderLayout;
 import java.awt.Color;
 import java.awt.GridLayout;
-import static java.awt.SystemColor.text;
 import javax.swing.*;
 import java.awt.event.*;
 
@@ -21,11 +20,9 @@ public class OutputClass extends JDialog {
     private JButton button2;
     private JButton button3;
     private JLabel label;
-//(outputLabel) balanceLabel
     public JLabel balanceLabel;
     
     public OutputClass (String text) {
-//balanceLabel
         balanceLabel = new JLabel(text);
 
         setTitle("ACCOUNT BALANCE");
@@ -41,6 +38,7 @@ public class OutputClass extends JDialog {
         pack();
         setVisible(true);
     }
+    
     private JPanel outputPanel() {
             
         JPanel panel = new JPanel();
@@ -48,7 +46,6 @@ public class OutputClass extends JDialog {
         panel.setBorder(BorderFactory.createMatteBorder
             (2, 2, 2, 2, Color.BLACK));
         panel.add(new JLabel("Account Balance:"));
-//balanceLabel
         panel.add(balanceLabel);
         
         return panel;       
@@ -70,8 +67,6 @@ public class OutputClass extends JDialog {
         
         panel = new JPanel();
         panel.setLayout(new GridLayout(3, 3, 10, 5));
-//panel.setBorder(BorderFactory.createMatteBorder
-          //  (2, 2, 2, 2, Color.BLACK));
         
         num1Field = new JTextField(5);
         num1Field.setEditable(true);
@@ -91,8 +86,10 @@ public class OutputClass extends JDialog {
                 int number = Integer.parseInt(num1Field.getText());
                 int number2 = Integer.parseInt(balanceLabel.getText());
                 JOptionPane.showMessageDialog(OutputClass.this, 
-                    "<html>Deposit Amount: $" + (number) +"<br>Updated Total: $" 
-                    + (number2 + number) + "</html>");
+                    "<html>Initial Balance: $" + (number2) +
+                    "<br>Deposit Amount: $" + (number) +
+                    "<br>Updated Total: $" + (number2 + number) + "</html>", 
+                    null, JOptionPane.PLAIN_MESSAGE);
             }
         });
 
@@ -101,8 +98,10 @@ public class OutputClass extends JDialog {
                 int number = Integer.parseInt(num2Field.getText());
                 int number2 = Integer.parseInt(balanceLabel.getText());
                 JOptionPane.showMessageDialog(OutputClass.this, 
-                    "<html>Withdrawal Amount: $" + (number) +"<br>Updated Total: $" 
-                    + (number2 - number) + "</html>");
+                    "<html>Initial Balance: $" + (number2) + 
+                    "<br>Withdrawal Amount: $" + (number) + 
+                    "<br>Updated Total: $" + (number2 - number) + "</html>", 
+                    null, JOptionPane.PLAIN_MESSAGE);
             }
         });
         
