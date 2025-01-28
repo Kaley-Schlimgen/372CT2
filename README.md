@@ -4,7 +4,7 @@ Class: Programming II
 
 Language: Java
 
-Environment: IntelliJ IDEA
+Environment: NetBeans IDE
 
 <h2>Description</h2>
 This program is a GUI application that takes information (name, address & GPA, numerically validated) as input from the user. Once the user clicks on a button, the program then calculates and displays the age of the user on a JPanel.
