@@ -1,26 +1,41 @@
-<h1>Java GUI Project, Programming II</h1>
+<h1>Java GUI Project</h1>
+
+Class: Programming II
+
+Language: Java
+
+Environment: IntelliJ IDEA
 
 <h2>Description</h2>
-Description:
-Create a simple GUI application that will obtain the birth date from a user. The program must then calculate and display the age of the user within a JPanel when the user selects a button. The GUI should display the value presented. Ensure that your application includes the following components:
-JPanel
-JButton
-ActionListener
+This program is a GUI application that takes information (name, address & GPA, numerically validated) as input from the user. Once the user clicks on a button, the program then calculates and displays the age of the user on a JPanel.
 
+<h4>This program contains the following components:<h4>
+
+- <b>JPanel</b>
  
-Validate numeric data for GPA
+- <b>JButton</b>
+
+- <b>Action Listener</b>
+
 <br />
 
-
+<!--
 <h2>Language Used</h2>
 
 - <b>Java</b> 
 
 <h2>Environments Used </h2>
 
-- <b>IDE?</b> 
+- <b>IntelliJ IDEA</b> 
+-->
 
-<h2>Program walk-through:</h2>
+<h2>Program walk-through</h2>
+
+
+
+
+
+
 <!--
 <p align="center">
 Launch the utility: <br/>
