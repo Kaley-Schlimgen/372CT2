@@ -1,4 +1,4 @@
-<h1>Java GUI Project</h1>
+<h1>Java GUI Program</h1>
 
 Class: Programming II
 
