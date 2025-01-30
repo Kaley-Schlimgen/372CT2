@@ -27,11 +27,11 @@ This program is a GUI application that takes information (name, address & GPA, n
 <h2>Environments Used </h2>
 
 - <b>IntelliJ IDEA</b> 
--->
+
 
 <h2>Program walk-through</h2>
 
-
+-->
 
 
 
